@@ -26,7 +26,6 @@ function genererGrille() {
             input.max = tailleGrille;
             input.classList.add('grid-cell');
             
-            // Ajouter la classe pour alterner les couleurs des blocs
             if (Math.floor(i / sqrt) % 2 === 0 && Math.floor(j / sqrt) % 2 === 0) {
                 input.classList.add('block-highlight');
             } else if (Math.floor(i / sqrt) % 2 === 1 && Math.floor(j / sqrt) % 2 === 1) {
