@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résolveur de Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container" role="main">
+        <h1>Résolveur de Sudoku</h1>
+        
+        <section class="controls" aria-label="Options de la grille">
+            <select id="taille" aria-labelledby="taille">
+                <option value="9">9x9</option>
+            </select>
+            <button id="generer" aria-label="Générer la grille">Générer la grille</button>
+        </section>
+
+        <div id="grille-container" aria-live="polite"></div>
+
+        <section class="actions" aria-label="Actions de résolution">
+            <button id="resoudre" aria-label="Résoudre la grille">Résoudre</button>
+            <button id="reinitialiser" aria-label="Réinitialiser la grille">Réinitialiser</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

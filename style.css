@@ -1,0 +1,161 @@
+:root {
+    --cell-size: 60px;
+    --primary-color: #6b4226; /* Chocolat foncé */
+    --secondary-color: #d6a97d; /* Chocolat au lait */
+    --accent-color: #a67c52; /* Chocolat noisette */
+    --background-color: #f3e5d0; /* Crème */
+    --text-color: #4a2c21; /* Chocolat noir */
+    --button-hover-color: #a67c52; /* Marron noisette pour le hover */
+    --border-radius: 15px; /* Plus arrondi pour un effet doux */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.container {
+    background-color: #fff8e7; /* Fond crème léger */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+select, button {
+    padding: 12px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+    background-color: var(--accent-color);
+    color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:focus {
+    outline: 3px solid var(--accent-color);
+}
+
+.actions button {
+    margin: 5px;
+}
+
+button#reinitialiser {
+    background-color: var(--secondary-color);
+}
+
+button#reinitialiser:hover {
+    background-color: #c2875a;
+}
+
+#grille-container {
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.grille {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    padding: 15px;
+}
+
+input[type="number"] {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: #fdf5e6;
+    color: var(--text-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    background-color: #f0e2c6;
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+input.block-highlight {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    input[type="number"] {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+    }
+
+    .grille {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 5px; /* Réduire l'espace entre les cellules */
+    }
+
+    input[type="number"] {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    select, button {
+        font-size: 0.9em;
+    }
+
+    .actions button {
+        padding: 10px 15px;
+    }
+
+    #grille-container {
+        width: 100%;
+        max-width: 90vw;
+    }
+}
